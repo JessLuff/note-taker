@@ -5,6 +5,8 @@
 
 module.exports = (app, fs) => {
 
+  var uniqid = require('uniqid');
+
   const noteData = require('../db/db.json');
 
   app.get('/api/notes', (req, res) => {
@@ -20,7 +22,8 @@ module.exports = (app, fs) => {
 
   app.post('/api/notes', (req, res) => {
 
-    fs.writeFile(noteData, req.body, 'utf8', err =>{
+    var id = uniqid;
+    fs.writeFile(noteData, [req.body, id], 'utf8', err =>{
 
       if (err) {
         throw err;
