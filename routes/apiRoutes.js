@@ -13,7 +13,9 @@ module.exports = (app) => {
   // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
   // ---------------------------------------------------------------------------
 
-  app.get('/api/notes', (req, res) => res.json(noteData));
+  app.get('/api/notes', (req, res) => {
+    res.json(noteData);
+  });
 
   // API POST Requests
   // Below code handles when a user submits a form and thus submits data to the server.
@@ -24,6 +26,8 @@ module.exports = (app) => {
   // ---------------------------------------------------------------------------
 
   app.post('/api/notes', (req, res) => {
+    console.log(req.body.title);
+    console.log(req.body.title);
     // Note the code here. Our "server" will respond to requests and let users know if they have a table or not.
     // It will do this by sending out the value "true" have a table
     // req.body is available since we're using the body parsing middleware

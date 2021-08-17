@@ -1,6 +1,12 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title":"Groceries",
+        "text":"Buy milk and bread",
+        "id": 0
+    },
+    {
+        "title":"Finish course",
+        "text":"Submit last assignment",
+        "id": 1
     }
 ]
